@@ -1,4 +1,4 @@
-FROM wordpress
+FROM zloystrelok/wordpress
 
 RUN set -x \
 	&& apt-get update \
