@@ -10,9 +10,13 @@ RUN apt-get install -y locales \
 	&& echo "ru_RU.UTF-8 UTF-8" >> /etc/locale.gen \
 	&& dpkg-reconfigure locales \
 	# Последовательность последнего эха важна!
-	&& echo "export LANG=ru_RU.utf8" >> /root/.bashrc
+	&& echo "export LANG=ru_RU.utf8" >> /root/.bashrc \
 	
-	#\
+	# Удалим не нужные файлики
+	&& rm /etc/nginx/conf.d/01-root.conf \
+	&& rm /etc/nginx/conf.d/00-stub.conf \
+	&& rm /etc/nginx/conf.d/05-php.conf
+ADD default.conf /etc/nginx/conf.d/
 	#&& rm -rf /var/lib/apt/lists/* \
 	#&& docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ \
 	#&& docker-php-ext-install ldap \
