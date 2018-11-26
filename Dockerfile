@@ -15,7 +15,7 @@ RUN apt-get install -y locales \
 	# Удалим не нужные файлики
 	&& rm /etc/nginx/conf.d/05-php.conf \
 	&& rm /etc/nginx/conf.d/01-root.conf \
-	&& rm /etc/nginx/conf.d/00-stub.conf \
+	&& rm /etc/nginx/conf.d/00-stub.conf 
 
 ADD default.conf /etc/nginx/conf.d/
 	#&& rm -rf /var/lib/apt/lists/* \
