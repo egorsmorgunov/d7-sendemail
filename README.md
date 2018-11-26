@@ -1,2 +1,2 @@
-itherz/webapp-full:d7 +sendmail
-Конфиг nginx передлал по codeignite 3
+itherz/webapp-full:d7 (debian +php7.2) +sendmail
+Конфиг nginx переделал под codeignite 3
