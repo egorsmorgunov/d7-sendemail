@@ -13,11 +13,11 @@ RUN apt-get install -y locales \
 	&& echo "export LANG=ru_RU.utf8" >> /root/.bashrc \
 	
 	# Удалим не нужные файлики
-	#&& rm /etc/nginx/conf.d/05-php.conf \
+	&& rm /etc/nginx/conf.d/05-php.conf \
 	&& rm /etc/nginx/conf.d/01-root.conf \
 	&& rm /etc/nginx/conf.d/00-stub.conf 
 
-ADD 05-php.conf /etc/nginx/conf.d/
+#ADD 05-php.conf /etc/nginx/conf.d/
 	#&& rm -rf /var/lib/apt/lists/* \
 	#&& docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ \
 	#&& docker-php-ext-install ldap \
