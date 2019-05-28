@@ -12,7 +12,7 @@ RUN apt-get install -y locales \
 	# Последовательность последнего эха важна!
 	&& echo "export LANG=ru_RU.utf8" >> /root/.bashrc \
 	
-	# Удалим не нужные файлики
+	# Удалим ненужные файлики
 	&& rm /etc/nginx/conf.d/05-php.conf \
 	&& rm /etc/nginx/conf.d/01-root.conf \
 	&& rm /etc/nginx/conf.d/00-stub.conf 
