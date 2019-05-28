@@ -1,4 +1,7 @@
-itherz/webapp-full:d7
+**FROM zloystrelok/d7** = clone itherz/webapp-full:d7 
+
+Так как сборка не работает, то залит готовый образ
+
 
 docker run
 ```yaml
