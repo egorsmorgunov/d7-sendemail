@@ -1,5 +1,5 @@
-itherz/webapp-full:d7 +sendmail
-####docker run
+itherz/webapp-full:d7
+docker run
 ```yaml
 'sendemail':
     pull_on_start: true
