@@ -1,4 +1,4 @@
-itherz/webapp-full:d7 +sendmail
+itherz/webapp-full:d7 +sendemail
 
 docker run
 
