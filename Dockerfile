@@ -1,5 +1,11 @@
 FROM zloystrelok/d7
 
+#fix jessie repo
+RUN rm /etc/apt/sources.list \
+	&& echo "deb http://archive.debian.org/debian/ jessie main" | tee -a /etc/apt/sources.list \
+	&& echo "deb-src http://archive.debian.org/debian/ jessie main" | tee -a /etc/apt/sources.list \
+	&& echo "Acquire::Check-Valid-Until false;" | tee -a /etc/apt/apt.conf.d/10-nocheckvalid \
+	&& echo 'Package: *\nPin: origin "archive.debian.org"\nPin-Priority: 500' | tee -a /etc/apt/preferences.d/10-archive-pin
 RUN set -x \
 	&& apt-get update \
 	&& apt-get install -y libldap2-dev sendemail 
@@ -11,9 +17,3 @@ RUN apt-get install -y locales \
 	&& dpkg-reconfigure locales \
 	# Последовательность последнего эха важна!
 	&& echo "export LANG=ru_RU.utf8" >> /root/.bashrc
-	
-	#\
-	#&& rm -rf /var/lib/apt/lists/* \
-	#&& docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ \
-	#&& docker-php-ext-install ldap \
-	#&& apt-get purge -y --auto-remove libldap2-dev
