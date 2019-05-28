@@ -2,7 +2,7 @@ FROM zloystrelok/d7
 
 RUN set -x \
 	&& apt-get update \
-	&& apt-get install -y libldap2-dev sendemail 
+	&& apt-get install -y libldap2-dev
 	#Установка руской локали
 RUN apt-get install -y locales \
 	&& echo LANG="ru_RU.UTF-8" >> /etc/default/locale \
@@ -11,9 +11,3 @@ RUN apt-get install -y locales \
 	&& dpkg-reconfigure locales \
 	# Последовательность последнего эха важна!
 	&& echo "export LANG=ru_RU.utf8" >> /root/.bashrc
-	
-	#\
-	#&& rm -rf /var/lib/apt/lists/* \
-	#&& docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ \
-	#&& docker-php-ext-install ldap \
-	#&& apt-get purge -y --auto-remove libldap2-dev
