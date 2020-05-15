@@ -11,7 +11,7 @@ RUN set -x \
 	&& apt-get update \
 	&& apt-get install -y --force-yes libldap2-dev mc
 	#Установка руской локали
-RUN apt-get install -y locales \
+RUN apt-get install -y --force-yes locales \
 	&& echo LANG="ru_RU.UTF-8" >> /etc/default/locale \
 	&& echo LANG="ru_RU.UTF-8" >> /etc/environment  \
 	&& echo "ru_RU.UTF-8 UTF-8" >> /etc/locale.gen \
